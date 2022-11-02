@@ -6,6 +6,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +17,9 @@ public class MigracaoDadosJob {
 	public JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job migracaoDadosJob(Step migracaoPessoaStep,Step migracaoDadosBancariosStep) {
+	public Job migracaoDadosJob(
+			@Qualifier("migrarPessoaStep") Step migracaoPessoasStep,
+			@Qualifier("migrarDadosBancariosStep") Step migracaoDadosBancariosStep) {
 		return jobBuilderFactory
 				.get("migracaoDadosJob")
 				.start(migracaoPessoasStep)
