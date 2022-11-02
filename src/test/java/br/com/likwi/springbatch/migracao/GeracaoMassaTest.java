@@ -12,8 +12,8 @@ public class GeracaoMassaTest {
     Faker faker = new Faker();
     @Test
     public void gerarBaseArquivo() throws Exception{
-        BufferedWriter writer= new BufferedWriter(new FileWriter("pessoas.csv",true));
-        for(int i=0;i<=1000000;i++){
+        BufferedWriter writer= new BufferedWriter(new FileWriter("pessoas1000.csv",true));
+        for(int i=0;i<=10000000;i++){
             Pessoa pessoa = new Pessoa(i, faker.name().firstName(), faker.internet().emailAddress().concat("_").concat(i + ""),
                     new Date(), (int) ((Math.random() * (99 - 18)) + 10));
             writer.append(pessoa.delimitado());
@@ -66,7 +66,7 @@ class Pessoa {
                 .concat(s)
                 .concat("2013-04-14 17:31:54,47")
                 .concat(s)
-                .concat(id+"");
+                .concat(id+"\n");
     }
 }
 
