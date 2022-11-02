@@ -1,4 +1,4 @@
-package br.com.likwi.springbatch_files_2_sql;
+package br.com.likwi.springbatchfiles2sql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbatchFiles2SqlApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbatchFiles2SqlApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbatchFiles2SqlApplication.class, args);
+    }
 
 }
